@@ -1,0 +1,330 @@
+<!-- ================================================= -->
+<!-- ================= listas.html =================== -->
+<!-- ================================================= -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especialidades</title>
+
+<style>
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #3c2a21;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #ffcc70;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    color: #ffcc70;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffcc7055;
+    padding-bottom: 8px;
+  }
+
+  .contenedor {
+    background: #5c4033;
+    padding: 35px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  /* ─── LISTAS ─── */
+  ul, ol {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 20px;
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  ol li {
+    counter-increment: postre-counter;
+  }
+
+  ol {
+    counter-reset: postre-counter;
+  }
+
+  ol li::before {
+    content: counter(postre-counter);
+    background: #ffcc70;
+    color: #3c2a21;
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  ul li::before {
+    content: "☕";
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  /* ─── IMÁGENES DE ITEM ─── */
+  .item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ffcc7066;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .item-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(255, 204, 112, 0.4);
+  }
+
+  /* ─── SEPARADOR ─── */
+  .separador {
+    border: none;
+    border-top: 1px solid #7c5c4a;
+    margin: 30px 0;
+  }
+
+  /* ─── GALERÍA ─── */
+  .galeria-titulo {
+    color: #ffcc70;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  .galeria-card {
+    background: #4a3025;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #7c5c4a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .galeria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  .galeria-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .galeria-card span {
+    display: block;
+    padding: 8px 6px;
+    font-size: 14px;
+    color: #ffe0a0;
+    font-weight: bold;
+  }
+
+  /* ─── ENLACE ─── */
+  .volver {
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+    color: #8ecae6;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+  }
+
+  .volver:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .contenedor {
+      width: 100%;
+      padding: 20px 15px;
+    }
+    h1 { font-size: 1.6rem; }
+    .item-img { width: 60px; height: 60px; }
+    li { font-size: 17px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<h1>☕ Especialidades del Café</h1>
+
+<div class="contenedor">
+
+  <!-- ══════════════ BEBIDAS ══════════════ -->
+  <h2>🥤 Bebidas más vendidas</h2>
+
+  <ul>
+    <li>
+      <span>Cappuccino</span>
+    </li>
+    <li>
+      <span>Latte</span>
+    </li>
+    <li>
+      <img
+        class="item-img"
+        src="https://familiakitchen.com/wp-content/uploads/2021/08/iStock-1224082700-hot-chocolate-v2.jpg"
+        alt="Chocolate caliente con canela y conchas"
+        onerror="this.style.display='none'"
+      >
+      <span>Chocolate caliente</span>
+    </li>
+    <li>
+      <span>Moka</span>
+    </li>
+    <li>
+      <span>Frappé</span>
+    </li>
+  </ul>
+
+  <hr class="separador">
+
+  <!-- ══════════════ POSTRES ══════════════ -->
+  <h2>🍰 Postres favoritos</h2>
+
+  <ol>
+    <li>
+      <img
+        class="item-img"
+        src="https://www.cocinavital.mx/wp-content/uploads/2026/03/receta-de-cheesecake-de-fresa-con-nata.jpg"
+        alt="Rebanada de cheesecake de fresa"
+        onerror="this.style.display='none'"
+      >
+      <span>Cheesecake</span>
+    </li>
+    <li>
+      <img
+        class="item-img"
+        src="https://sspark.genspark.ai/cfimages?u1=92mXIq15vbZU8ibqZFAxO5QySMIayBdn1ujice3ZHP2hr9CplzuSBGb95Lv0oR0yhTqkK7Uhj5TZJ%2FlGQUiRWFZfjyVOaIwF32Ve%2Bb5Sdujy6lF1IJJSj2GJ%2ByDqHC%2BGMz9Q7y5SgTtbdZIVfr4Pq2631IPjTcWGvFBTvD5ks%2F00lq3kTEC1E2pX%2F8J1JQ%3D%3D&u2=WsPAhmUeqnY0ORaG&width=2560"
+        alt="Brownie de chocolate"
+        onerror="this.style.display='none'"
+      >
+      <span>Brownie</span>
+    </li>
+    <li>
+      <img
+        class="item-img"
+        src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2017/11/New-York-cheesecake.jpg"
+        alt="Pay de queso estilo New York"
+        onerror="this.style.display='none'"
+      >
+      <span>Pay de queso</span>
+    </li>
+    <li>
+      <img
+        class="item-img"
+        src="https://recetasdecocina.elmundo.es/wp-content/uploads/2015/09/cookies-receta.jpg"
+        alt="Galletas con chispas de chocolate"
+        onerror="this.style.display='none'"
+      >
+      <span>Galletas</span>
+    </li>
+  </ol>
+
+  <hr class="separador">
+
+  <!-- ══════════════ GALERÍA ══════════════ -->
+  <p class="galeria-titulo">📸 Nuestros favoritos en imágenes</p>
+
+  <div class="galeria">
+
+    <div class="galeria-card">
+      <img
+        src="https://familiakitchen.com/wp-content/uploads/2021/08/iStock-1224082700-hot-chocolate-v2.jpg"
+        alt="Chocolate caliente"
+        onerror="this.src='https://via.placeholder.com/200x130/5c4033/ffcc70?text=Imagen'"
+      >
+      <span>Chocolate caliente</span>
+    </div>
+
+    <div class="galeria-card">
+      <img
+        src="https://www.cocinavital.mx/wp-content/uploads/2026/03/receta-de-cheesecake-de-fresa-con-nata.jpg"
+        alt="Cheesecake de fresa"
+        onerror="this.src='https://via.placeholder.com/200x130/5c4033/ffcc70?text=Imagen'"
+      >
+      <span>Cheesecake de fresa</span>
+    </div>
+
+    <div class="galeria-card">
+      <img
+        src="https://sspark.genspark.ai/cfimages?u1=92mXIq15vbZU8ibqZFAxO5QySMIayBdn1ujice3ZHP2hr9CplzuSBGb95Lv0oR0yhTqkK7Uhj5TZJ%2FlGQUiRWFZfjyVOaIwF32Ve%2Bb5Sdujy6lF1IJJSj2GJ%2ByDqHC%2BGMz9Q7y5SgTtbdZIVfr4Pq2631IPjTcWGvFBTvD5ks%2F00lq3kTEC1E2pX%2F8J1JQ%3D%3D&u2=WsPAhmUeqnY0ORaG&width=2560"
+        alt="Brownie de chocolate"
+        onerror="this.src='https://via.placeholder.com/200x130/5c4033/ffcc70?text=Imagen'"
+      >
+      <span>Brownie</span>
+    </div>
+
+    <div class="galeria-card">
+      <img
+        src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2017/11/New-York-cheesecake.jpg"
+        alt="Pay de queso"
+        onerror="this.src='https://via.placeholder.com/200x130/5c4033/ffcc70?text=Imagen'"
+      >
+      <span>Pay de queso</span>
+    </div>
+
+    <div class="galeria-card">
+      <img
+        src="https://recetasdecocina.elmundo.es/wp-content/uploads/2015/09/cookies-receta.jpg"
+        alt="Galletas"
+        onerror="this.src='https://via.placeholder.com/200x130/5c4033/ffcc70?text=Imagen'"
+      >
+      <span>Galletas</span>
+    </div>
+
+  </div>
+
+</div>
+
+<a class="volver" href="index.html">← Volver al inicio</a>
+
+</body>
+</html>
